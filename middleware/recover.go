@@ -1,8 +1,9 @@
 package middleware
 
 import (
-	"grpc-end"
 	"runtime"
+
+	"github.com/xiaomLee/grpc-end"
 
 	log "github.com/sirupsen/logrus"
 )

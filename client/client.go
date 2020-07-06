@@ -2,8 +2,9 @@ package client
 
 import (
 	"context"
-	"grpc-end"
 	"time"
+
+	"github.com/xiaomLee/grpc-end"
 
 	"google.golang.org/grpc"
 )

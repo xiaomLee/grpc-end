@@ -3,11 +3,12 @@ package main
 //go:generate protoc -I ../ grpc_end.proto --go_out=plugins=grpc:../
 
 import (
-	grpc_end "grpc-end"
-	"grpc-end/middleware"
 	"math"
 	"os"
 	"os/signal"
+
+	grpc_end "github.com/xiaomLee/grpc-end"
+	"github.com/xiaomLee/grpc-end/middleware"
 
 	"google.golang.org/grpc"
 )
