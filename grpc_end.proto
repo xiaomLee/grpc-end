@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package grpc_end;
+option go_package = ".;grpc_end";
+
+service End {
+    // 处理请求
+    rpc DoRequest (Request) returns (Response) {}
+}
+
+message Request {
+    string controller = 1;          // 请求的controller
+    string action = 2;              // 请求的action
+    map<string, string> params = 3; // 请求附带的所有参数
+    map<string, bytes> files = 4;   // 请求附带的文件, key为文件字段名，val为文件的原始数据
+    map<string, string> header = 5; // 其他请求头附加的字段, middleware等中间件使用
+
+}
+
+message Response {
+    bool success = 1;    // 请求是否成功
+    bytes data = 5;      // 实际返回给客户端的数据
+}
